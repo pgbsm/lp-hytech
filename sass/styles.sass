@@ -1,0 +1,81 @@
+@use 'variables'
+@use 'mixins'
+
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+    color: variables.$secondary-color
+
+
+body
+    background-color: variables.$primary-color
+    font-family: Josefin Sans
+    
+    a
+        text-decoration: none
+
+.header
+    margin-top: 50px
+    @include mixins.flex-center
+    flex-direction: column
+    @include mixins.container
+    @include mixins.mobile
+
+    &-caixa
+
+        width: 150px
+        height: 150px
+        border-radius: 50%
+        border: 7px solid variables.$bg-color
+        @include mixins.flex-center
+
+        &-conteudo
+            background-color: variables.$bg-color
+            width: 85%
+            height: 85%
+            border-radius: 50%
+            @include mixins.flex-center
+
+            &-logo
+                width: 65%
+
+    &-informacoes
+        margin-top: 50px
+
+        .titulo
+            font-weight: 700
+            font-size: 50px
+
+        .segumento
+            font-size: 25px
+            text-align: center
+
+.main
+    @include mixins.container
+    @include mixins.mobile
+
+    &-redes
+        @include mixins.flex-center
+        flex-direction: column
+        gap: 60px
+        margin: 50px
+
+        li
+            width: 400px
+            height: 70px
+            background-color: variables.$secondary-color
+            border-radius: 10px
+            @include mixins.flex-center
+
+            &:hover
+                background-color: variables.$bg-color
+
+                a
+                    color: variables.$primary-color
+                    font-weight: 700
+
+.rodape
+    @include mixins.container
+    margin: 30px
+    @include mixins.mobile
